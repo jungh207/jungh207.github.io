@@ -2,13 +2,13 @@
 html, body {
   margin: 0;
   height: 100%;
-  background: #FFFDD0; /* 배경색 */
+  background: #FFFDD0;
   font-family: "Anonymous Pro", monospace;
   color: #111;
   overflow-x: hidden;
 }
 
-/* 뒤로가기 화살표 */
+
 .back {
   position: fixed;
   top: 20px;
@@ -19,7 +19,7 @@ html, body {
   z-index: 50;
 }
 
-/* 제목 중앙 정렬 */
+
 .title {
   text-align: center;
   font-size: clamp(40px, 10vw, 120px);
@@ -29,7 +29,7 @@ html, body {
   letter-spacing: 0.05em;
 }
 
-/* 사진 줄 */
+
 .gallery-row {
   display: flex;
   justify-content: center;
