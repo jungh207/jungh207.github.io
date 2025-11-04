@@ -94,3 +94,7 @@ body {
   font-size: 17vw;
   margin: 0;
 }
+
+.break {
+  clear: left;
+}
