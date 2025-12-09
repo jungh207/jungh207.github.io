@@ -72,3 +72,60 @@ body.show-image .drink-image-wrapper {
 
 body.show-image #drink-title {
   transform: translateY(200px); }
+
+  
+
+ 
+.drink-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+#drink-img {
+  display: block;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+
+.drink-container:hover #drink-img {
+  filter: blur(4px) brightness(0.8);
+  transform: scale(1.02);
+}
+
+
+.drink-overlay {
+  position: absolute;
+  inset: 0;                       
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  color: #fff;
+  font-family: "Anonymous Pro", monospace;
+
+  background: rgba(0, 0, 0, 0.25); 
+  backdrop-filter: blur(6px);      
+  border-radius: 50%;              
+  pointer-events: none;            
+}
+
+
+.drink-container:hover .drink-overlay {
+  opacity: 1;
+}
+
+.drink-type {
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.drink-cafe {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}

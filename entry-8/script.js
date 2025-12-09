@@ -15,6 +15,18 @@ let hasRevealed = false;
 let currentIndex = -1;     
 
 
+const drinkInfo = [
+  { type: "Matcha Latte",      cafe: "Cafe A" },
+  { type: "Americano",    cafe: "Arcane Estate Coffee" },
+  { type: "Ice Latte",       cafe: "Fa San" },
+  { type: "Ice Matcha",   cafe: "Sorate" },
+  { type: "Hot Chocolate",      cafe: "La Cabra" },
+];
+
+const overlay      = document.getElementById("drink-overlay");
+const drinkTypeEl  = overlay.querySelector(".drink-type");
+const drinkCafeEl  = overlay.querySelector(".drink-cafe");
+
 function getRandomDrinkIndex() {
   if (drinks.length === 1) return 0;
 
@@ -30,6 +42,9 @@ function changeDrink() {
   const index = getRandomDrinkIndex();
   currentIndex = index;
   drinkImg.src = drinks[index];
+  const info = drinkInfo[index];
+  drinkTypeEl.textContent = info.type;
+  drinkCafeEl.textContent = info.cafe;
 }
 
 
