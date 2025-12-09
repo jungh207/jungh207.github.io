@@ -31,7 +31,6 @@ form.addEventListener("submit", function (e) {
   const lower = sentence.toLowerCase();
   const matchedKeywords = [];
 
-
   Object.keys(keywordImages).forEach((keyword) => {
     if (lower.includes(keyword)) {
       matchedKeywords.push(keyword);
@@ -39,15 +38,17 @@ form.addEventListener("submit", function (e) {
   });
 
   if (matchedKeywords.length === 0) {
-    alert('try using one of these words: drink, flower, eat, visit');
+    alert("try using one of these words: drink, flower, eat, visit");
   } else {
     matchedKeywords.forEach((keyword) => {
       scatterWord(keyword);
-      showImages(keywordImages[keyword]);
     });
+
+    const firstKeyword = matchedKeywords[0];
+    showCenteredImage(keywordImages[firstKeyword]);
   }
 
-  input.value = "";
+  input.value = ""; 
 });
 
 
@@ -76,32 +77,34 @@ function scatterWord(text) {
 }
 
 
-function showImages(imageArray) {
+
+function showCenteredImage(imageArray) {
   if (!imageArray || imageArray.length === 0) return;
 
-  const shuffled = imageArray.slice().sort(() => Math.random() - 0.5);
-  const howMany = 2 + Math.floor(Math.random() * 2); 
-  const selected = shuffled.slice(0, Math.min(howMany, imageArray.length));
-
-  selected.forEach((src) => {
-    const img = document.createElement("img");
-    img.classList.add("trace-photo");
-    img.src = src;
-
-    const x = 10 + Math.random() * 80;
-    const y = 10 + Math.random() * 75;
-
-    img.style.left = x + "%";
-    img.style.top = y + "%";
-
-    canvas.appendChild(img);
-
-    setTimeout(() => {
-      img.classList.add("fade-out");
-    }, 4000);
-
-    setTimeout(() => {
-      img.remove();
-    }, 8000);
+ 
+  document.querySelectorAll(".trace-photo").forEach((img) => {
+    img.remove();
   });
+
+  const src = imageArray[Math.floor(Math.random() * imageArray.length)];
+
+  const img = document.createElement("img");
+  img.classList.add("trace-photo");
+  img.src = src;
+
+ 
+  img.style.left = "50%";
+  img.style.top = "60%";
+  img.style.transform = "translate(-50%, -50%)";
+
+  canvas.appendChild(img);
+
+  
+  setTimeout(() => {
+    img.classList.add("fade-out");
+  }, 4000);
+
+  setTimeout(() => {
+    img.remove();
+  }, 8000);
 }
