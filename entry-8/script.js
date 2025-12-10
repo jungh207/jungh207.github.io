@@ -16,7 +16,7 @@ let currentIndex = -1;
 
 
 const drinkInfo = [
-  { type: "Matcha Latte",      cafe: "Cafe A" },
+  { type: "Matcha Latte",      cafe: "Isshiki Matcha" },
   { type: "Americano",    cafe: "Arcane Estate Coffee" },
   { type: "Ice Latte",       cafe: "Fa San" },
   { type: "Ice Matcha",   cafe: "Sorate" },
