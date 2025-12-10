@@ -62,3 +62,23 @@ html, body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
+
+.quote {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-family: "Anonymous Pro", monospace;
+  color: #111;
+}
+
+.quote p {
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.quote span {
+  font-size: 0.95rem;
+  color: #444;
+  opacity: 0.8;
+}

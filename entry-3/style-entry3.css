@@ -56,11 +56,57 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 
-.photo:hover {
-  transform: scale(1.5);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-  z-index: 10;
+.photo:hover img {
+  filter: blur(3px) brightness(0.8);
+  transform: scale(1.05);
+}
+
+.photo-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(183, 211, 181, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.photo-info .cafe {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.photo-info .drink {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+.photo:hover .photo-info {
+  opacity: 1;
+}
+
+.quote {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-family: "Anonymous Pro", monospace;
+  color: #111;
+}
+
+.quote p {
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.quote span {
+  font-size: 0.95rem;
+  color: #444;
+  opacity: 0.8;
 }
